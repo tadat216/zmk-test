@@ -495,16 +495,17 @@ XXX  &kp Z                &kp X            &kp C                &kp V           
             >;
         };
 
-        /* Layer 1: Navigation + Mouse (hold Space + trackpad = scroll)
-         * Left home row: clicks for use while right hand is on trackpad
+        /* Layer 1: Navigation + Mouse
+         * Left side: scroll (Q/W/Z/X) + clicks (E/R/T) for right hand on trackpad
+         * Right side: arrow keys, PgUp/PgDn
          */
         nav {
             display-name = "Nav";
             bindings = <
-XXX  ___        ___        &mkp MCLK  ___       ___    &kp PG_UP  &kp BSPC  &kp UP    &kp DEL    ___      XXX
-XXX  &mkp LCLK  &mkp RCLK  &sk LSHFT  &sk LCTRL ___    &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET  XXX
-XXX  ___        ___        ___        ___       ___    &kp INS    &kp TAB   ___       ___        ___      XXX
-                            ___        ___       ___    ___        ___       CANCEL
+XXX  &msc SCRL_UP    &msc SCRL_DOWN   &mkp LCLK  &mkp RCLK  &mkp MCLK    &kp PG_UP  &kp BSPC  &kp UP    &kp DEL    ___      XXX
+XXX  &sk LGUI        &sk LALT         &sk LSHFT  &sk LCTRL  ___          &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET  XXX
+XXX  &msc SCRL_LEFT  &msc SCRL_RIGHT  ___        ___        ___          &kp INS    &kp TAB   ___       ___        ___      XXX
+                                       ___        ___        ___          ___        ___       CANCEL
             >;
         };
 
