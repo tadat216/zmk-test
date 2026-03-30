@@ -7,6 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/mouse.h>
 
 /* 36-key layout on 42-key matrix.
  * The 6 outer pinky positions (0, 11, 12, 23, 24, 35) are always &none.
@@ -494,14 +495,16 @@ XXX  &kp Z                &kp X            &kp C                &kp V           
             >;
         };
 
-        /* Layer 1: Navigation */
+        /* Layer 1: Navigation + Mouse (hold Space + trackpad = scroll)
+         * Left home row: clicks for use while right hand is on trackpad
+         */
         nav {
             display-name = "Nav";
             bindings = <
-XXX  ___       ___       ___       ___       ___    &kp PG_UP  &kp BSPC  &kp UP    &kp DEL    ___      XXX
-XXX  &sk LGUI  &sk LALT  &sk LSHFT &sk LCTRL ___    &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET  XXX
-XXX  ___       ___       ___       ___       ___    &kp INS    &kp TAB   ___       ___        ___      XXX
-                          ___       ___       ___    ___        ___       CANCEL
+XXX  ___        ___        &mkp MCLK  ___       ___    &kp PG_UP  &kp BSPC  &kp UP    &kp DEL    ___      XXX
+XXX  &mkp LCLK  &mkp RCLK  &sk LSHFT  &sk LCTRL ___    &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp RET  XXX
+XXX  ___        ___        ___        ___       ___    &kp INS    &kp TAB   ___       ___        ___      XXX
+                            ___        ___       ___    ___        ___       CANCEL
             >;
         };
 
