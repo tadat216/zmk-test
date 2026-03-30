@@ -49,19 +49,11 @@
     };
    };
 
-#include <input/processors.dtsi>
-
 / {
   cirque_listener {
     compatible = "zmk,input-listener";
     device = <&cirque>;
     y-invert;
     scale-multiplier = <2>;
-
-    /* Hold NAV (Space) + slide trackpad = scroll */
-    scroll_mode {
-      layers = <1>;
-      input-processors = <&zip_xy_to_scroll_mapper &zip_scroll_scaler 1 3>;
-    };
   };
 };
